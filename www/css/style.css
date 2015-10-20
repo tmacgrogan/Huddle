@@ -3,12 +3,12 @@
 }
 .title {
     font-size: 30px;
-    color: #007aff;
+    color: #5d72ff;
 }
 .location {
     display:inline;
     font-size: 16px;
-    color: #007aff;
+    color: #5d72ff;
 }
 .description {
     padding-left: 10px;
@@ -20,7 +20,7 @@
     float:right;
 }
 .title {
-    color: #007aff
+    color: #5d72ff
 }
 
 

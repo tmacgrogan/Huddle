@@ -6,30 +6,35 @@ angular.module('starter.services', [])
   // Some fake testing data
   var chats = [{
     id: 0,
+    imgLink: 'img/animal39.png',
     title: 'Tennis',
     location: 'CRC',
     description: 'Looking for someone to play tennis with me later today. We can hit balls and talk about the Williams sisters, or whatever people who play Tennis do.',
     time: 'Today, 4:00pm',
   }, {
     id: 1,
+    imgLink: 'img/cat19.png',
     title: 'Pickup Soccer',
     location: 'CRC',
     description: 'blah',
     time: 'Today, 5:00pm',
   }, {
     id: 2,
+    imgLink: 'img/deer4.png',
     title: 'Calc II HW5 Help',
     location: 'CULC',
     description: 'blah',
     time: 'Tomorrow, 1:00pm',
   }, {
     id: 3,
+    imgLink: 'img/dolphin1.png',
     title: 'CS 2110 Recursive Assembly Help',
     location: 'College of Computing',
     description: 'blah',
     time: 'Tomorrow, 9:00pm',
   }, {
     id: 4,
+    imgLink: 'img/elephant6.png',
     title: 'Need Members for Hackathon Group',
     location: 'Klaus Atrium',
     description: 'blah',
@@ -37,6 +42,7 @@ angular.module('starter.services', [])
   },
   {
     id: 5,
+    imgLink: 'img/ewe2.png',
     title: 'Teach me how to swim',
     location: 'Florida',
     description: 'Sharks',
@@ -44,6 +50,7 @@ angular.module('starter.services', [])
   },
   {
     id: 6,
+    imgLink: 'img/pig4.png',
     title: 'Free juggling lessons',
     location: 'Skiles',
     description: 'blah',
