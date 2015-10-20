@@ -4,8 +4,9 @@ var bodyParser = require('body-parser');
 var https = require('https');
 var http = require('http');
 var mongo = require('mongodb');
-var monk = require('monk');
-var db = monk('localhost:27017/huddledb')
+var mongoose = require('mongoose');
+var huddleModel = require('./huddleModel.js');
+mongoose.connect('mongodb://localhost:27017/huddledb');
 
 //root app
 var app = express();
@@ -17,12 +18,6 @@ const PORT=8080
 
 //start server @ http://localhost:[PORT]
 http.createServer(app).listen(PORT);
-
-//make db accessible
-app.use(function(req,res,next){
-    req.db = db;
-    next();
-});
 
 //use middleware
 app.use(bodyParser.json());
@@ -36,15 +31,20 @@ app.get('/', function(req, res){
 var create = express();
 app.use("/create", create);
 create.post('/', function(req, res){
-	var db = req.db;
-	var huddles = db.get('huddles');
-	var newHuddle = req.body;
+	var huddle = new huddleModel();
+	huddle.name = req.body.name;
+	huddle.location = req.body.location;
+	huddle.description = req.body.description;
+	huddle.lifeTime = req.body.lifeTime;
+	huddle.numberOfPeople = req.body.numberOfPeople;
+	huddle.huddleType = req.body.huddleType;
+	
+	huddle.save();
 	/////////
 	//validate newHuddle
 	/////////
-	huddles.insert(newHuddle);
-	console.log(newHuddle);
-	res.send("");
+	console.log(huddle);
+	res.send(huddle);
 });
 
 // GET huddle.com/timeline
@@ -52,8 +52,7 @@ var timeline = express();
 app.use('/timeline', timeline);
 timeline.get('/', function(req, res){
 	//filter by query string
-	var db = req.db;
-	var huddles = db.get('huddles');
+	var huddles = huddleModel.findOne().exec();
 	console.log(huddles);
 	res.send(huddles);
 });
