@@ -31,6 +31,9 @@ app.get('/', function(req, res){
 var create = express();
 app.use("/create", create);
 create.post('/', function(req, res){
+	/////////
+	//validate newHuddle
+	/////////
 	var huddle = new huddleModel();
 	huddle.name = req.body.name;
 	huddle.location = req.body.location;
@@ -38,21 +41,50 @@ create.post('/', function(req, res){
 	huddle.lifeTime = req.body.lifeTime;
 	huddle.numberOfPeople = req.body.numberOfPeople;
 	huddle.huddleType = req.body.huddleType;
+	huddle.ownerId = req.body.ownerId ? req.body.ownerId : 1;  //override with authentication
 	
-	huddle.save();
-	/////////
-	//validate newHuddle
-	/////////
+	huddle.save(function(err){
+		if(err){
+			console.log(err);
+			next();
+		}
+	});
 	console.log(huddle);
 	res.send(huddle);
 });
 
-// GET huddle.com/timeline
-var timeline = express();
-app.use('/timeline', timeline);
-timeline.get('/', function(req, res){
+// GET huddle.com/huddles
+var huddles = express();
+app.use('/huddles', huddles);
+huddles.get('/', function(req, res){
 	//filter by query string
-	var huddles = huddleModel.findOne().exec();
-	console.log(huddles);
-	res.send(huddles);
+	huddleModel.find(function(err, huds){
+		req.huddles = huds;
+		console.log("found: " + huds);
+	}).exec(function(){
+		console.log(req.huddles);
+		res.send(req.huddles);
+	});
 });
+
+// GET huddle.com/huddles/:id
+huddles.param('id', function(req, res, next, id){
+	console.log('searching for huddle with id ' + id);
+	huddleModel.findById(id, function(err, hud){
+		if(err){
+			next(err);
+		}else if(hud){
+			console.log('found!');
+			req.huddle = hud;
+			next();
+		}
+		else{
+			next(new Error("failed to load Huddle."));
+		}
+	}).exec();
+});
+huddles.get('/:id', function(req, res){
+	var huddle = req.huddle;
+	res.json(huddle);
+});
+
