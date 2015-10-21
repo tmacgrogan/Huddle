@@ -11,6 +11,7 @@ angular.module('starter.services', [])
     location: 'CRC',
     description: 'Looking for someone to play tennis with me later today. We can hit balls and talk about the Williams sisters, or whatever people who play Tennis do.',
     time: 'Today, 4:00pm',
+    initials: 'VX'
   }, {
     id: 1,
     imgLink: 'img/cat19.png',
@@ -18,6 +19,7 @@ angular.module('starter.services', [])
     location: 'CRC',
     description: 'blah',
     time: 'Today, 5:00pm',
+    initials: 'AS'
   }, {
     id: 2,
     imgLink: 'img/deer4.png',
@@ -25,6 +27,7 @@ angular.module('starter.services', [])
     location: 'CULC',
     description: 'blah',
     time: 'Tomorrow, 1:00pm',
+    initials: 'MS'
   }, {
     id: 3,
     imgLink: 'img/dolphin1.png',
@@ -32,6 +35,7 @@ angular.module('starter.services', [])
     location: 'College of Computing',
     description: 'blah',
     time: 'Tomorrow, 9:00pm',
+    initials: 'TM'
   }, {
     id: 4,
     imgLink: 'img/elephant6.png',
@@ -39,6 +43,7 @@ angular.module('starter.services', [])
     location: 'Klaus Atrium',
     description: 'blah',
     time: 'Tomorrow, 6:00pm',
+    initials: 'LW'
   },
   {
     id: 5,
@@ -47,6 +52,7 @@ angular.module('starter.services', [])
     location: 'Florida',
     description: 'Sharks',
     time: 'Today, 6:00am',
+    initials: 'AK'
   },
   {
     id: 6,
@@ -55,6 +61,7 @@ angular.module('starter.services', [])
     location: 'Skiles',
     description: 'blah',
     time: 'Tomorrow, 4:00pm',
+    initials: 'JC'
   }];
 
   return {

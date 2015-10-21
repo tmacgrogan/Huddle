@@ -4,21 +4,32 @@
   The FriendsCtrl pulls data from the Friends service (service.js)
   The Friends service returns an array of friend data
 -->
-<ion-view view-title="{{chat.title}}">
+<ion-view>
+  <ion-nav-bar>
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+    <ion-nav-title>
+        <div align="center">
+            <span class="header-logo"><img src="img/HuddleLogo.png" width="70" alt="Huddle"/></span>
+        </div>
+    </ion-nav-title>
+  </ion-nav-bar>
   <br class="padding-top">
     <br>
+    <br>
+    <label class="huddle-details-title"> {{chat.title}} </label>
     <br>
     <p class="description" align="left">
       {{chat.description}}
     </p>
-      <br><br>
-      <p class="location">Location:</p>
+      <br>
+      <p class="location">Location: </p>
       <p class="nobreak">{{chat.location}}</p>
     <br>
-    <p class="location">Time:</p>
+    <p class="location">Time: </p>
     <p class="nobreak">{{chat.time}}</p>
     <br>
-    <p class="location">Type:</p>
+    <p class="location">Type: </p>
     <p class="nobreak">Individual, Social</p>
     <hr>
     <!--TODO: List view of replies once we start actually doing stuff-->
