@@ -10,7 +10,8 @@
 </ion-nav-title>
   <ion-content class="has-header">
     <ion-list>
-      <ion-item class="item-remove-animate item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
+      <ion-item class="item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
+        <img ng-src="{{chat.imgLink}}" height="40" style="float:left">
         <h2 class="title">{{chat.title}}</h2>
         <p class="nobreak">{{chat.location}}</p>
           <p class="right" align="right">{{chat.time}}</p>
