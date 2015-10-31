@@ -1,0 +1,44 @@
+.nobreak {
+    display:inline;
+}
+.title {
+    font-size: 30px;
+    color: #5d72ff;
+}
+.location {
+    display:inline;
+    font-size: 16px;
+    color: #5d72ff;
+    padding-left:10px;
+}
+.description {
+    padding-left: 10px;
+}
+.wide {
+    width:100%;
+}
+.right {
+    float:right;
+}
+.title {
+    color: #5d72ff
+}
+
+.timeline {
+    float: left;
+    position: absolute;
+    top: 48px;
+    left: 23px;
+    font-size:12px;
+}
+
+.huddle-details-title {
+    padding-left: 10px;
+    font-size: 35px;
+    color: #5d72ff;
+}
+img {
+    padding-right: 10px;
+}
+
+

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Huddle-A</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="new_huddle">Create a new huddle</string>
+    <string name="search">FIND SOME STUFF</string>
+</resources>
