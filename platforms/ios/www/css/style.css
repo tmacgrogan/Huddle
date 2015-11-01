@@ -1,0 +1,26 @@
+.nobreak {
+    display:inline;
+}
+.title {
+    font-size: 30px;
+    color: #5d72ff;
+}
+.location {
+    display:inline;
+    font-size: 16px;
+    color: #5d72ff;
+}
+.description {
+    padding-left: 10px;
+}
+.wide {
+    width:100%;
+}
+.right {
+    float:right;
+}
+.title {
+    color: #5d72ff
+}
+
+

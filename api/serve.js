@@ -6,6 +6,7 @@ var http = require('http');
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
 var huddleModel = require('./huddleModel.js');
+var userModel = require('./userModel.js');
 mongoose.connect('mongodb://localhost:27017/huddledb');
 
 //root app
@@ -53,12 +54,46 @@ create.post('/', function(req, res){
 	res.send(huddle);
 });
 
+// POST huddle.com/createUser
+var createUser = express();
+app.use("/createUser", createUser);
+createUser.post('/', function(req, res) {
+	var user = new userModel();
+	user.userID = req.body.userID;
+	user.userName = req.body.userName;
+	user.password = req.body.password;
+	user.userEmail = req.body.userEmail;
+	user.userNumber = req.body.userNumber;
+	user.huddleIDs = req.body.huddleIDs;
+	user.spiritAnimal = req.body.spiritAnimal;
+	user.userEmojiBio = req.body.userEmojiBio;
+
+	user.save(function(err) {
+		if(err) {
+			console.log(err);
+			next();
+		}
+	});
+console.log(user);
+res.send(user);
+});
+
 // GET huddle.com/huddles
 var huddles = express();
 app.use('/huddles', huddles);
 huddles.get('/', function(req, res){
 	//filter by query string
-	huddleModel.find(function(err, huds){
+	var filter = {};
+	if(req.query.huddleType){
+		filter.huddleType = req.query.huddleType;
+	}
+	if(req.query.location){
+		filter.location = req.query.location;
+	}
+	if(req.query.numberOfPeople){
+		filter.numberOfPeople = req.query.numberOfPeople;
+	}
+	huddleModel.find(filter, function(err, huds){
 		req.huddles = huds;
 		console.log("found: " + huds);
 	}).exec(function(){
@@ -66,6 +101,39 @@ huddles.get('/', function(req, res){
 		res.send(req.huddles);
 	});
 });
+
+// GET huddle.com/users
+var users = express();
+app.use('/users', users);
+users.get('/', function(req, res) {
+	userModel.find(function(err, usrs) {
+		req.users = usrs;
+		console.log("found: " + usrs);
+	}).exec(function() {
+		console.log(req.users);
+		res.send(req.users);
+	});
+});
+
+// GET huddle.com/users/:id
+users.param('id', function(req, res, next, id) {
+	console.log('searching for user with id ' + id);
+	userModel.findById(id, function(err, usr) {
+		if (err) {
+			next(err);
+		} else if (usr) {
+			console.log('found!');
+			req.user = usr;
+			next();
+		} else {
+			next(new Error("Failed to load  users."));
+		}
+	}).exec();
+});
+users.get('/:id', function(req, res) {
+	var user = req.user;
+	res.json(user);
+})
 
 // GET huddle.com/huddles/:id
 huddles.param('id', function(req, res, next, id){
@@ -87,4 +155,3 @@ huddles.get('/:id', function(req, res){
 	var huddle = req.huddle;
 	res.json(huddle);
 });
-
