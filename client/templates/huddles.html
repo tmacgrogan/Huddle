@@ -10,12 +10,12 @@
 </ion-nav-title>
   <ion-content class="has-header">
     <ion-list>
-      <ion-item class="item-icon-right" ng-repeat="chat in chats" type="item-text-wrap" href="#/tab/chats/{{chat.id}}">
-        <img ng-src="{{chat.imgLink}}" height="30" style="float:left">
-        <label class="timeline">{{chat.initials}}</label>
-        <h2 class="title">{{chat.title}}</h2>
-        <p class="nobreak">{{chat.location}}</p>
-          <p class="right" align="right">{{chat.time}}</p>
+      <ion-item class="item-icon-right" ng-repeat="huddle in huddles" type="item-text-wrap" href="#/huddles/{{huddle.id}}">
+        <img ng-src="{{huddle.imgLink}}" height="30" style="float:left">
+        <label class="timeline">{{huddle.initials}}</label>
+        <h2 class="title">{{huddle.title}}</h2>
+        <p class="nobreak">{{huddle.location}}</p>
+          <p class="right" align="right">{{huddle.time}}</p>
         <i class="icon ion-chevron-right icon-accessory"></i>
       </ion-item>
     </ion-list>
