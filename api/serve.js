@@ -83,7 +83,17 @@ var huddles = express();
 app.use('/huddles', huddles);
 huddles.get('/', function(req, res){
 	//filter by query string
-	huddleModel.find(function(err, huds){
+	var filter = {};
+	if(req.query.huddleType){
+		filter.huddleType = req.query.huddleType;
+	}
+	if(req.query.location){
+		filter.location = req.query.location;
+	}
+	if(req.query.numberOfPeople){
+		filter.numberOfPeople = req.query.numberOfPeople;
+	}
+	huddleModel.find(filter, function(err, huds){
 		req.huddles = huds;
 		console.log("found: " + huds);
 	}).exec(function(){
