@@ -11,12 +11,12 @@
 </ion-nav-title>
   <ion-content class="has-header">
     <ion-list>
-      <ion-item class="item-icon-right" ng-repeat="huddle in huddles" type="item-text-wrap" href="#/huddles/{{huddle.id}}">
-        <img ng-src="{{huddle.imgLink}}" height="30" style="float:left">
-        <label class="timeline">{{huddle.initials}}</label>
-        <h2 class="title">{{huddle.title}}</h2>
-        <p class="nobreak">{{huddle.location}}</p>
-          <p class="right" align="right">{{huddle.time}}</p>
+      <ion-item class="item-icon-right" ng-repeat="(key, value) in huddles" type="item-text-wrap" href="#/huddle/{{value._id}}">
+        <img ng-src="{{value.ownerSpiritAnimal}}" height="30" style="float:left">
+        <label class="timeline">{{value.ownerInitials}}</label>
+        <h2 class="title">{{value.name}}</h2>
+        <p class="nobreak">{{value.location}}</p>
+          <p class="right" align="right">{{value.lifeTime}}</p>
         <i class="icon ion-chevron-right icon-accessory"></i>
       </ion-item>
     </ion-list>
