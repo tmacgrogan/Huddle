@@ -1,9 +1,24 @@
-angular.module('starter.services', [])
+angular
+  .module('timelineCtrl', [])
+  .controller('TimelineCtrl', [
+    '$scope',
+    '$state',
+    '$stateParams',
+    TimelineCtrl
+  ]);
 
-.factory('Chats', function() {
-  // Might use a resource here that returns a JSON array
-
-  // Some fake testing data
+function TimelineCtrl($scope,
+                           $rootScope,
+                           $timeout,
+                           $state,
+                           $stateParams) {
+  // With the new view caching in Ionic, Controllers are only called
+  // when they are recreated or on app start, instead of every page change.
+  // To listen for when this page is active (for example, to refresh data),
+  // listen for the $ionicView.enter ev1111ent:
+  //
+  //$scope.$on('$ionicView.enter', function(e) {
+  //});
   var chats = [{
     id: 0,
     imgLink: 'img/animal39.png',
@@ -64,20 +79,5 @@ angular.module('starter.services', [])
     initials: 'JC'
   }];
 
-  return {
-    all: function() {
-      return chats;
-    },
-    remove: function(chat) {
-      chats.splice(chats.indexOf(chat), 1);
-    },
-    get: function(chatId) {
-      for (var i = 0; i < chats.length; i++) {
-        if (chats[i].id === parseInt(chatId)) {
-          return chats[i];
-        }
-      }
-      return null;
-    }
-  };
-});
+  $scope.huddles = chats;
+}
