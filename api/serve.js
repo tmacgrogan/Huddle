@@ -45,11 +45,11 @@ create.post('/', function(req, res){
 	huddle.name = req.body.name;
 	huddle.location = req.body.location;
 	huddle.description = req.body.description;
-	huddle.lifeTime = req.body.lifeTime;
-	huddle.numberOfPeople = req.body.numberOfPeople;
-	huddle.huddleType = req.body.huddleType;
-	huddle.ownerInitials = req.body.initials;
-	huddle.ownerSpiritAnimal = req.body.spiritAnimal;
+	huddle.lifeTime = req.body.lifeTime; //TODO: make function to calculate this 
+	huddle.numberOfPeople = req.body.numberOfPeople; 
+	huddle.huddleType = req.body.huddleType; 
+	huddle.ownerInitials = req.body.initials; //TODO: GET THIS FROM USER API METHOD
+	huddle.ownerSpiritAnimal = req.body.spiritAnimal; //TODO: GET THIS FROM USER API METHOD
 	huddle.ownerId = req.body.ownerId ? req.body.ownerId : 1;  //override with authentication
 	
 	huddle.save(function(err){

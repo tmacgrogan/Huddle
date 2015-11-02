@@ -10,7 +10,7 @@ var huddleSchema = new Schema({
     description: String, //can't be modified
     lifeTime: String, //can't be modified
 	numberOfPeople: Number,
-	huddleType: Number, // (0=both, 1=social, 2=academic)
+	huddleType: Number, // (0=academic, 1=social)
     ownerInitials: String,
     ownerSpiritAnimal: String
 }, {

@@ -29,8 +29,12 @@
     <p class="location">Time: </p>
     <p class="nobreak">{{huddle.lifeTime}}</p>
     <br>
+    <p class="location">Looking for: </p>
+    <p class="nobreak" ng-if="huddle.numberOfPeople > 1">{{huddle.numberOfPeople}} people</p>
+    <p class="nobreak" ng-if="huddle.numberOfPeople === 1">{{huddle.numberOfPeople}} person</p>
+    <br>
     <p class="location">Type: </p>
-    <p class="nobreak">Individual, Social</p>
+    <p class="nobreak">{{huddle.type}}</p>
     <hr>
     <!--TODO: List view of replies once we start actually doing stuff-->
     <div class="bar bar-footer item-input-inset ">
@@ -41,5 +45,4 @@
             Reply
         </button>
     </div>
-  </ion-content>
 </ion-view>
