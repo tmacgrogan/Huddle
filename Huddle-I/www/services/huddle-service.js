@@ -13,6 +13,13 @@ huddle.service('HuddleService', ['$http', function($http) {
         });
     };
 
+    this.getHuddleByID = function(id, callback) {
+        var url = "http://localhost:8080/huddles/" + id; 
+        $http.get(url).success(function(data, status) {
+            callback(null, status, data);
+        });
+    };
+    
     this.createHuddle = function(json, callback) {
         var req = {
             method: "POST",
