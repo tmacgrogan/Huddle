@@ -50,6 +50,8 @@ public class HuddleAdapter extends BaseAdapter {
         TextView artist = (TextView)fromthesix.findViewById(R.id.description); // artist name
         TextView location = (TextView)fromthesix.findViewById(R.id.location); // duration
         TextView time = (TextView)fromthesix.findViewById(R.id.time);
+        TextView initials = (TextView)fromthesix.findViewById(R.id.initials);
+        TextView description = (TextView)fromthesix.findViewById(R.id.description);
         ImageView thumb_image=(ImageView)fromthesix.findViewById(R.id.list_image); // thumb image
 
         Huddle current = getItem(position);
@@ -59,6 +61,10 @@ public class HuddleAdapter extends BaseAdapter {
         artist.setText(current.description);
         location.setText(current.location);
         time.setText(current.time);
+        initials.setText(current.initials);
+        description.setText(current.description);
+        thumb_image.setImageResource(current.icon);
+
         //thumb_image.getDrawable(song.get(CustomizedListView.KEY_THUMB_URL), thumb_image);
         return fromthesix;
     }

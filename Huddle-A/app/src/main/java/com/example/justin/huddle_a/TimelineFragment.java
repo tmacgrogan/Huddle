@@ -10,16 +10,11 @@ import java.lang.reflect.GenericArrayType;
 
 public class TimelineFragment extends ListFragment {
     public TimelineFragment() {
-
     }
 
     public static TimelineFragment newInstance() {
         TimelineFragment myFragment = new TimelineFragment();
-
         Bundle args = new Bundle();
-        //args.putInt("someInt", someInt);
-       // myFragment.setArguments(args);
-
         return myFragment;
     }
 
@@ -33,17 +28,16 @@ public void onCreate(Bundle savedInstanceState) {
 
 @Override
 public void onListItemClick(ListView l, View v, int position, long id) {
-
+    super.onListItemClick(l,v,position,id);
+    /*
+    Object current = this.getListAdapter().getItem(position);
+    Huddle temp  = (Huddle)current;*/
     l.animate();
+    Intent next = new Intent(getActivity(), DetailActivity.class);
+    startActivity(next);
+
+
+
 }
 
-    /*public class HuddleAdapter extends ArrayAdapter<String> {
-
-        public HuddleAdapter(Context context, int layoutResourceId, String[] data) {
-            super(context, layoutResourceId, data);
-            this.layoutResourceId = layoutResourceId;
-            this.context = context;
-            this.data = data;
-        }
-    }*/
 }

@@ -1,6 +1,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
 
     android:orientation="horizontal"
@@ -13,7 +13,6 @@
         android:layout_height="wrap_content"
         android:padding="3dip"
         android:layout_alignParentLeft="true"
-
         android:layout_marginRight="5dip">
 
         <ImageView
@@ -22,7 +21,19 @@
             android:layout_height="50dip"
             android:src="@mipmap/ic_launcher"/>
 
+
     </LinearLayout>
+    <TextView
+        android:id="@+id/initials"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/thumbnail"
+        android:text="JC"
+        android:textColor="#000000"
+        android:paddingLeft="20dip"
+        android:typeface="sans"
+        android:textSize="12dip"
+        android:textStyle="normal"/>
 
     <!-- Title-->
     <TextView
@@ -32,15 +43,15 @@
         android:layout_alignTop="@+id/thumbnail"
         android:layout_toRightOf="@+id/thumbnail"
         android:text="Look at this title and how blue it is"
-        android:textColor="#5d72ff"
+        android:textColor="?attr/colorPrimary"
         android:typeface="sans"
         android:textSize="16dip"
-        android:textStyle="bold"/>
+        android:textStyle="normal"/>
 
     <!-- Description -->
     <TextView
         android:id="@+id/description"
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/title"
         android:textColor="#000000"
@@ -68,7 +79,7 @@
         android:textSize="10dip"
         android:textColor="#919191"
         android:textStyle="bold"
-        android:layout_alignBottom="@+id/thumbnail"
+        android:layout_alignBottom="@+id/initials"
 
          />
     <!-- Time/Date/Whatever -->
@@ -81,7 +92,7 @@
         android:textSize="10dip"
         android:textColor="#919191"
         android:textStyle="bold"
-        android:layout_alignBottom="@+id/thumbnail"
+        android:layout_alignBottom="@+id/initials"
          />
 
 </RelativeLayout>
