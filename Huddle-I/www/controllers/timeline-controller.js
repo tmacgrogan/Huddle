@@ -82,10 +82,9 @@ function TimelineCtrl(HuddleService,
   }];
   var json = {}, huddles;
   HuddleService.getHuddles(json, function(err, status, data) {
-    if (!err) {
-      huddles = data; 
-      console.log(huddles)
-      $scope.huddles = chats;
+    if (!err) { 
+      console.log(data);
+      $scope.huddles = data;
     }
   });
 }
