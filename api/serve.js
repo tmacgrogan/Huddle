@@ -11,7 +11,15 @@ mongoose.connect('mongodb://localhost:27017/huddledb');
 
 //root app
 var app = express();
-
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
 app.locals.title = 'Huddle';
 app.locals.email = 'root@huddle.com';
 
@@ -19,9 +27,6 @@ const PORT=8080
 
 //start server @ http://localhost:[PORT]
 http.createServer(app).listen(PORT);
-
-//use middleware
-app.use(bodyParser.json());
 
 // GET huddle.com
 app.get('/', function(req, res){
@@ -35,6 +40,7 @@ create.post('/', function(req, res){
 	/////////
 	//validate newHuddle
 	/////////
+	console.log(req);
 	var huddle = new huddleModel();
 	huddle.name = req.body.name;
 	huddle.location = req.body.location;
@@ -42,6 +48,8 @@ create.post('/', function(req, res){
 	huddle.lifeTime = req.body.lifeTime;
 	huddle.numberOfPeople = req.body.numberOfPeople;
 	huddle.huddleType = req.body.huddleType;
+	huddle.ownerInitials = req.body.initials;
+	huddle.ownerSpiritAnimal = req.body.spiritAnimal;
 	huddle.ownerId = req.body.ownerId ? req.body.ownerId : 1;  //override with authentication
 	
 	huddle.save(function(err){
