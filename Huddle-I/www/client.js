@@ -7,9 +7,9 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', [
   'ionic', 
+  'huddleService',
   'timelineCtrl', 
   'huddleDetailsCtrl',
-  'huddleService'
   ])
 
 .run(function($ionicPlatform) {
@@ -28,7 +28,7 @@ angular.module('starter', [
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
 
   // Ionic uses AngularUI Router which uses the concept of states
   // Learn more here: https://github.com/angular-ui/ui-router
@@ -42,7 +42,7 @@ angular.module('starter', [
     templateUrl: 'templates/tabs.html'
   })
   .state('home.huddles', {
-      url: '/huddles',
+      url: '/huddle',
       views: {
         'tab-huddles': {
           templateUrl: 'templates/huddles.html',
@@ -51,7 +51,7 @@ angular.module('starter', [
       }
     })
     .state('home.huddle-details', {
-      url: '/huddles/:huddleId',
+      url: '/huddle/:huddleId',
       views: {
         'tab-huddles': {
           templateUrl: 'templates/huddle-details.html',
@@ -70,6 +70,9 @@ angular.module('starter', [
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/huddles');
+  $urlRouterProvider.otherwise('/huddle');
+
+  $httpProvider.defaults.useXDomain = true;
+  delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
 });

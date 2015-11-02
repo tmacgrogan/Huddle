@@ -1,19 +1,17 @@
 angular
-  .module('timelineCtrl', [])
-  .controller('TimelineCtrl', [
-    'HuddleService',
+  .module('createHuddleCtrl', [])
+  .controller('CreateHuddleCtrl', [
     '$scope',
     '$state',
     '$stateParams',
-    TimelineCtrl
+    CreateHuddleCtrl
   ]);
 
-function TimelineCtrl(HuddleService,
-                     $scope,
-                     $rootScope,
-                     $timeout,
-                     $state,
-                     $stateParams) {
+function CreateHuddleCtrl($scope,
+                           $rootScope,
+                           $timeout,
+                           $state,
+                           $stateParams) {
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
   // To listen for when this page is active (for example, to refresh data),
@@ -80,12 +78,6 @@ function TimelineCtrl(HuddleService,
     time: 'Tomorrow, 4:00pm',
     initials: 'JC'
   }];
-  var json = {}, huddles;
-  HuddleService.getHuddles(json, function(err, status, data) {
-    if (!err) {
-      huddles = data; 
-      console.log(huddles)
-      $scope.huddles = chats;
-    }
-  });
+
+  $scope.huddles = chats;
 }
