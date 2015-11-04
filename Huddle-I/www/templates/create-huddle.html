@@ -29,4 +29,20 @@
   <hr>
   <label class="huddleType">Social or Academic?</label>
   <br>
+  <ion-radio ng-repeat="type in huddleTypes"
+                       ng-value="type"
+                       ng-model="huddleType"
+                       ng-change="updateHuddleType(type)"
+                       class="button button-positive button-small button-outline"
+                       name="radio1">
+              {{ type }}
+  </ion-radio>
+  <hr>
+  <label class="location">Location</label>
+  <label class="item item-input">
+    <input type="text" placeholder="Add Location?">
+  </label>
+  <button class="button button-full button-positive">
+  Let's Huddle!
+  </button>
 </ion-view>
