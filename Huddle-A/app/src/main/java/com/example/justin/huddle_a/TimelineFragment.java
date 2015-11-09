@@ -9,6 +9,8 @@ import android.support.v4.app.ListFragment;
 import java.lang.reflect.GenericArrayType;
 
 public class TimelineFragment extends ListFragment {
+    static Huddle stuff[] = Huddle.sampleInput();
+    static int pos;
     public TimelineFragment() {
     }
 
@@ -21,7 +23,7 @@ public class TimelineFragment extends ListFragment {
 @Override
 public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Huddle[] stuff = Huddle.sampleInput();
+        //this.stuff = Huddle.sampleInput();
         HuddleAdapter Adapter = new HuddleAdapter(getActivity(), R.layout.test,stuff);
         setListAdapter(Adapter);
 }
@@ -29,10 +31,8 @@ public void onCreate(Bundle savedInstanceState) {
 @Override
 public void onListItemClick(ListView l, View v, int position, long id) {
     super.onListItemClick(l,v,position,id);
-    /*
-    Object current = this.getListAdapter().getItem(position);
-    Huddle temp  = (Huddle)current;*/
     l.animate();
+    pos = position;
     Intent next = new Intent(getActivity(), DetailActivity.class);
     startActivity(next);
 

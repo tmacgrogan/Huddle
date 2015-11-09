@@ -1,6 +1,8 @@
 package com.example.justin.huddle_a;
 
 import android.app.ActionBar;
+import android.content.Intent;
+import android.media.Image;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -18,6 +20,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
+import android.widget.ImageButton;
 import android.widget.TextView;
 //TODO: Fix button Layout
 //TODO: Add actionlistener when ListFragment element is clicked
@@ -38,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
      */
     private ViewPager mViewPager;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,17 +59,21 @@ public class MainActivity extends AppCompatActivity {
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
         //TODO: Align search
-       /* FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        ImageButton fab = (ImageButton) findViewById(R.id.add_huddle);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                createHuddle();
             }
-        });*/
+        });
 
     }
 
+    public void createHuddle() {
+        Intent next = new Intent(this, CreateHuddle.class);
+        startActivity(next);
+
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

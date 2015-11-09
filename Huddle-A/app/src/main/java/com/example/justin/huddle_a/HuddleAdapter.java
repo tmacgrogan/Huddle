@@ -20,7 +20,6 @@ public class HuddleAdapter extends BaseAdapter {
     int layoutResourceId;
     private static LayoutInflater inflater = null;
     Huddle data[];
-
     public HuddleAdapter(Activity context, int layoutResourceId, Huddle[] data) {
         //super(context, layoutResourceId, data);
         this.context = context;

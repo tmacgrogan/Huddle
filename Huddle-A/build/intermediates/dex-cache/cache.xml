@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/justin/Dropbox/Fall 2015/Mobile App/Huddle/Huddle-A/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.0/jars/libs/internal_impl-23.1.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="8716243bf04bae8d6c9ca94d27b9a9be7236f0a3">
+        <dex dex="/home/justin/Dropbox/Fall 2015/Mobile App/Huddle/Huddle-A/app/build/intermediates/pre-dexed/debug/internal_impl-23.1.0-c8e21bc853ce330ae1979e4c4fc21f3923891eb3.jar" />
+    </item>
+    <item
+        jar="/home/justin/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/23.1.0/support-annotations-23.1.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="92e3fc113ec3ee36b64603a38857b95700025633">
+        <dex dex="/home/justin/Dropbox/Fall 2015/Mobile App/Huddle/Huddle-A/app/build/intermediates/pre-dexed/debug/support-annotations-23.1.0-a23415e2ac4b0c16590e6e3dbc1d6542b4315db3.jar" />
+    </item>
+    <item
+        jar="/home/justin/Dropbox/Fall 2015/Mobile App/Huddle/Huddle-A/app/build/intermediates/exploded-aar/com.android.support/design/23.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="19026d31f5d3ae868db81319671a642be5fbba08">
+        <dex dex="/home/justin/Dropbox/Fall 2015/Mobile App/Huddle/Huddle-A/app/build/intermediates/pre-dexed/debug/classes-84726631c141d3846705f3be46d1c61d44c96b36.jar" />
+    </item>
+    <item
+        jar="/home/justin/Dropbox/Fall 2015/Mobile App/Huddle/Huddle-A/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="ddde541c289c8b816a8f8fd6c325d80788c522a6">
+        <dex dex="/home/justin/Dropbox/Fall 2015/Mobile App/Huddle/Huddle-A/app/build/intermediates/pre-dexed/debug/classes-9ecd0f73e0fb0d12a26f58c1435b724fbae0d3c1.jar" />
+    </item>
+    <item
+        jar="/home/justin/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-android/1.2.0/6ee2953ccf51ce72b6d548c30c4633b99eb4f9dd/bolts-android-1.2.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="6ee2953ccf51ce72b6d548c30c4633b99eb4f9dd">
+        <dex dex="/home/justin/Dropbox/Fall 2015/Mobile App/Huddle/Huddle-A/app/build/intermediates/pre-dexed/debug/bolts-android-1.2.0-32b89963be47aadd8daaed7118b1166697bc5f67.jar" />
+    </item>
+    <item
+        jar="/home/justin/Dropbox/Fall 2015/Mobile App/Huddle/Huddle-A/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="57ae0d750ff83f0c738d21720224ac7ea866a094">
+        <dex dex="/home/justin/Dropbox/Fall 2015/Mobile App/Huddle/Huddle-A/app/build/intermediates/pre-dexed/debug/classes-bdc9da96f07106eb34a9a890556f63963f5ee0d1.jar" />
+    </item>
+    <item
+        jar="/home/justin/Dropbox/Fall 2015/Mobile App/Huddle/Huddle-A/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="3f151e49c316a5ab2c065969a3b3b55ef9b393fc">
+        <dex dex="/home/justin/Dropbox/Fall 2015/Mobile App/Huddle/Huddle-A/app/build/intermediates/pre-dexed/debug/classes-708a164f0572ef11193882e558884e2bbdfa7339.jar" />
+    </item>
+
+</items>

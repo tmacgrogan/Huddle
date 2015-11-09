@@ -16,10 +16,12 @@
       <input type="text" placeholder="Huddle Name">
     </label>
     <label class="item item-input">
-      <textarea placeholder="Description"></textarea>
+      <div class="desc">
+        <textarea class = "desc" placeholder="Description"></textarea>
+      </div>
     </label>
   </div>
-  <label class="numberOfPeople">Number of People?</label>
+  <label class="grey numberOfPeople">Number of People?</label>
   <br>
   <div class="button-bar">
     <a class="button">-</a>
@@ -27,7 +29,6 @@
     <a class="button">+</a>
   </div>
   <hr>
-  <label class="huddleType">Social or Academic?</label>
   <br>
   <ion-radio ng-repeat="type in huddleTypes"
                        ng-value="type"
