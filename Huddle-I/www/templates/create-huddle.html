@@ -24,9 +24,17 @@
   <label class="grey numberOfPeople">Number of People?</label>
   <br>
   <div class="button-bar">
-    <a class="button">-</a>
-    <input class="input-mini" type="text" placeholder="numberOfPeople">
-    <a class="button">+</a>
+    <div>
+      <div class = "my_center">
+        <a class="button my_button">-</a>
+      </div>
+      <div class = "my_center">
+        <input class="input-mini num-of-people" type="text" placeholder="0">
+      </div>
+      <div class = "my_center">
+        <a class="button my_button">+</a>
+      </div>
+    </div>
   </div>
   <hr>
   <br>
@@ -39,11 +47,13 @@
               {{ type }}
   </ion-radio>
   <hr>
-  <label class="location">Location</label>
+  <div class="location">
+    <label>Location</label>
+  </div>
   <label class="item item-input">
     <input type="text" placeholder="Add Location?">
   </label>
-  <button class="button button-full button-positive">
-  Let's Huddle!
-  </button>
+  <div class = "letshuddle">
+    <button class="button button-full button-positive rad">Let's Huddle!</button>
+  </div>  
 </ion-view>
