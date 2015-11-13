@@ -9,9 +9,12 @@ public class DetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.huddle_detail);
-        //Replace this garbage later
         Huddle now = TimelineFragment.stuff[TimelineFragment.pos];
+        setContentView(R.layout.huddle_detail);
+        setTitle(now.title);
+
+        //Replace this garbage later
+
         TextView title = (TextView)findViewById(R.id.detail_title); // title
         TextView location = (TextView)findViewById(R.id.detail_location); // duration
         TextView time = (TextView)findViewById(R.id.detail_time);

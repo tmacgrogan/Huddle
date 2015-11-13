@@ -4,6 +4,10 @@
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="new_huddle">Create a new huddle</string>
     <string name="search">FIND SOME STUFF</string>
+    <string name="individual">Individual</string>
+    <string name="group">Group</string>
+    <string name="social">Social</string>
+    <string name="Academic">Academic</string>
 
     <string name="title_activity_detail">DetailActivity</string>
     <string name="dummy_button">Dummy Button</string>

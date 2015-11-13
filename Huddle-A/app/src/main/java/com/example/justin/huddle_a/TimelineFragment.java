@@ -11,6 +11,7 @@ import java.lang.reflect.GenericArrayType;
 public class TimelineFragment extends ListFragment {
     static Huddle stuff[] = Huddle.sampleInput();
     static int pos;
+    static HuddleAdapter Adapter;
     public TimelineFragment() {
     }
 
@@ -24,7 +25,7 @@ public class TimelineFragment extends ListFragment {
 public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //this.stuff = Huddle.sampleInput();
-        HuddleAdapter Adapter = new HuddleAdapter(getActivity(), R.layout.test,stuff);
+        Adapter = new HuddleAdapter(getActivity(), R.layout.test,stuff);
         setListAdapter(Adapter);
 }
 
