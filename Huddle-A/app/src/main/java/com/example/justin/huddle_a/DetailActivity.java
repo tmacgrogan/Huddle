@@ -9,7 +9,7 @@ public class DetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Huddle now = TimelineFragment.stuff[TimelineFragment.pos];
+        Huddle now = TimelineFragment.Adapter.getItem(TimelineFragment.pos);
         setContentView(R.layout.huddle_detail);
         setTitle(now.title);
 

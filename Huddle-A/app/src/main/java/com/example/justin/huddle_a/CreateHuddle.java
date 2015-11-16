@@ -1,5 +1,6 @@
 package com.example.justin.huddle_a;
 
+import android.animation.TimeAnimator;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -10,6 +11,8 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+
+import java.util.ArrayList;
 
 public class CreateHuddle extends AppCompatActivity {
     Button ibutton, gbutton,sbutton, abutton, submit;
@@ -81,10 +84,15 @@ public class CreateHuddle extends AppCompatActivity {
             EditText location = (EditText)findViewById(R.id.locbutton);
 
             //Edit this to whatever
-            toAdd = new Huddle(R.drawable.ewe2, title.getText().toString(), location.getText().toString(), description.getText().toString(), "Today", "TF" );
-            TimelineFragment.stuff[0] = toAdd;
+            toAdd = new Huddle(R.drawable.pig4, title.getText().toString(), location.getText().toString(), description.getText().toString(), "Today", "TF" );
+            TimelineFragment.Adapter.addItem(toAdd);
+
+            /*ArrayList<Huddle> temp = new ArrayList<>();
+            Huddle[] fuck = new Huddle[len + 1];
+            System.arraycopy(TimelineFragment.stuff, 0, fuck, 0, len);
+            TimelineFragment.stuff = fuck;
             TimelineFragment.Adapter.notifyDataSetChanged();
-            System.out.println("shit");
+            System.out.println("shit");*/
             finish();
 
         }
