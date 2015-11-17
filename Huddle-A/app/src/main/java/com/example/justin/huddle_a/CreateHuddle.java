@@ -83,16 +83,10 @@ public class CreateHuddle extends AppCompatActivity {
             EditText description = (EditText)findViewById(R.id.editText2);
             EditText location = (EditText)findViewById(R.id.locbutton);
 
-            //Edit this to whatever
+            //Add new huddle to ArrayAdapter
             toAdd = new Huddle(R.drawable.pig4, title.getText().toString(), location.getText().toString(), description.getText().toString(), "Today", "TF" );
             TimelineFragment.Adapter.addItem(toAdd);
-
-            /*ArrayList<Huddle> temp = new ArrayList<>();
-            Huddle[] fuck = new Huddle[len + 1];
-            System.arraycopy(TimelineFragment.stuff, 0, fuck, 0, len);
-            TimelineFragment.stuff = fuck;
-            TimelineFragment.Adapter.notifyDataSetChanged();
-            System.out.println("shit");*/
+            //Close the activity
             finish();
 
         }

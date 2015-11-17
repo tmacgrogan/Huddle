@@ -2,9 +2,12 @@ package com.example.justin.huddle_a;
 
 import android.app.ActionBar;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.media.Image;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -24,7 +27,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 //TODO: Fix button Layout
 //TODO: Add actionlistener when ListFragment element is clicked
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements FilterFragment.FilterDialogListener {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -60,13 +63,41 @@ public class MainActivity extends AppCompatActivity {
 
         //TODO: Align search
         ImageButton fab = (ImageButton) findViewById(R.id.add_huddle);
+        ImageButton filter = (ImageButton) findViewById(R.id.search_button);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 createHuddle();
             }
         });
+        filter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showFilter();
+            }
+        });
 
+    }
+
+    @Override
+    public void onDialogPositiveClick(DialogFragment dialog) {
+        // User touched the dialog's positive button
+
+    }
+
+    @Override
+    public void onDialogNegativeClick(DialogFragment dialog) {
+        // User touched the dialog's negative button
+
+    }
+
+    public void showFilter() {
+        // Create an instance of the dialog fragment and show it
+        DialogFragment dialog = new FilterFragment();
+        //dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
+
+        dialog.show(getSupportFragmentManager(), "FilterFragment");
     }
 
     public void createHuddle() {
@@ -118,6 +149,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         }
+
 
         @Override
         public int getCount() {
