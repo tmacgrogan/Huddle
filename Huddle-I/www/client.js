@@ -51,15 +51,24 @@ angular.module('starter', [
         }
       }
     })
-    .state('home.huddle-details', {
-      url: '/huddle/:huddleId',
-      views: {
-        'tab-huddles': {
-          templateUrl: 'templates/huddle-details.html',
-          controller: 'HuddleDetailsCtrl'
-        }
+  .state('home.huddle-details', {
+    url: '/huddle/:huddleId',
+    views: {
+      'tab-huddles': {
+        templateUrl: 'templates/huddle-details.html',
+        controller: 'HuddleDetailsCtrl'
       }
-    })
+    }
+  })
+  .state('home.filter-huddle', {
+    url: '/filter-huddle',
+    views: {
+      'tab-huddles': {
+        templateUrl: 'templates/filter-huddle.html',
+        controller: 'FilterHuddleCtrl'
+      }
+    }
+  })
   .state('home.createHuddle', {
     url: '/create-huddle',
     views: {
@@ -68,7 +77,7 @@ angular.module('starter', [
         controller: 'CreateHuddleCtrl'
       }
     }
-    });
+  });
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/huddle');
