@@ -1,0 +1,39 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view view-title="Sign Up">
+  <ion-nav-bar>
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+  </ion-nav-bar>
+  <br class="padding-top">
+  <br>
+  <div class = buffer>
+  </div>
+  <div class="list">
+    <label>
+      <div class = "center">
+        <div class="item item-input login2">
+          <input type="text" placeholder="first name">
+        </div>
+        <div class="item item-input login3">
+          <input type="text" placeholder="last name">
+        </div>
+      </div>
+    </label>
+    <div style="clear:both;"></div>
+    <label class="item item-input login">
+      <input type="text" placeholder="password">
+    </label>
+    <label class="item item-input login">
+      <input type="text" placeholder="confirm password">
+    </label>
+  </div>
+  <br>
+  <div class = "login">
+    <button class="button button-full button-positive rad">Sign Up</button>
+  </div>  
+</ion-view>

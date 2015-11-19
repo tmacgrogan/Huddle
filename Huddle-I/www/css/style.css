@@ -48,9 +48,45 @@
     margin: 0 auto;
 }
 
+.buffer {
+    height: 100px;
+}
+
 .letshuddle {
     width: 70%;
     margin: 0 auto;
+}
+
+.mid-text {
+    color: #C7C7C7;
+    margin: 0 auto;
+}
+
+.login {
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 7px;
+    border-radius: 10px;
+}
+
+.center {
+    margin: 0 auto;
+    width: 50%;
+}
+
+.login2 {
+    width: 50%;
+    float: left;
+    margin: 0 auto;
+    margin-bottom: 7px;
+    border-radius: 10px;
+}
+
+.login3 {
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 7px;
+    border-radius: 10px;
 }
 
 .rad {

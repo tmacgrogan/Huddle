@@ -10,7 +10,10 @@ angular.module('starter', [
   'huddleService',
   'timelineCtrl', 
   'huddleDetailsCtrl',
-  'createHuddleCtrl'
+  'createHuddleCtrl',
+  'FilterHuddleCtrl',
+  'LoginCtrl',
+  'SignupCtrl'
   ])
 
 .run(function($ionicPlatform) {
@@ -69,6 +72,24 @@ angular.module('starter', [
       }
     }
   })
+  .state('home.login', {
+    url: '/login',
+    views: {
+      'tab-huddles': {
+        templateUrl: 'templates/login.html',
+        controller: 'LoginCtrl'
+      }
+    }
+  })
+  .state('home.signup', {
+    url: '/signup',
+    views: {
+      'tab-huddles': {
+        templateUrl: 'templates/signup.html',
+        controller: 'SignupCtrl'
+      }
+    }
+  })  
   .state('home.createHuddle', {
     url: '/create-huddle',
     views: {
