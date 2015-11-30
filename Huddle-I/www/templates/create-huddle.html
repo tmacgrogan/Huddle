@@ -16,17 +16,44 @@
       <input type="text" placeholder="Huddle Name">
     </label>
     <label class="item item-input">
-      <textarea placeholder="Description"></textarea>
+      <div class="desc">
+        <textarea class = "desc" placeholder="Description"></textarea>
+      </div>
     </label>
   </div>
-  <label class="numberOfPeople">Number of People?</label>
+  <label class="grey numberOfPeople">Number of People?</label>
   <br>
   <div class="button-bar">
-    <a class="button">-</a>
-    <input class="input-mini" type="text" placeholder="numberOfPeople">
-    <a class="button">+</a>
+    <div>
+      <div class = "my_center">
+        <a class="button my_button">-</a>
+      </div>
+      <div class = "my_center">
+        <input class="input-mini num-of-people" type="text" placeholder="0">
+      </div>
+      <div class = "my_center">
+        <a class="button my_button">+</a>
+      </div>
+    </div>
   </div>
   <hr>
-  <label class="huddleType">Social or Academic?</label>
   <br>
+  <ion-radio ng-repeat="type in huddleTypes"
+                       ng-value="type"
+                       ng-model="huddleType"
+                       ng-change="updateHuddleType(type)"
+                       class="button button-positive button-small button-outline"
+                       name="radio1">
+              {{ type }}
+  </ion-radio>
+  <hr>
+  <div class="location">
+    <label>Location</label>
+  </div>
+  <label class="item item-input">
+    <input type="text" placeholder="Add Location?">
+  </label>
+  <div class = "letshuddle">
+    <button class="button button-full button-positive rad">Let's Huddle!</button>
+  </div>  
 </ion-view>

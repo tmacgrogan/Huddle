@@ -5,15 +5,99 @@
     font-size: 30px;
     color: #5d72ff;
 }
+
+.desc {
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 3px;
+}
 .location {
     display:inline;
     font-size: 16px;
     color: #5d72ff;
     padding-left:10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 .description {
     padding-left: 10px;
 }
+
+.num-of-people {
+    text-align: center;
+    width: 80px;
+}
+
+.next-to {
+    float: left;
+}
+
+.button-bar {
+    width: 184px;
+    margin: 0 auto;
+}
+
+.my_center {
+    float: left;
+    margin: 0 auto;
+}
+
+.my_button {
+    border-radius: 5px;
+    width: 30px;
+    margin: 0 auto;
+}
+
+.buffer {
+    height: 100px;
+}
+
+.letshuddle {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.mid-text {
+    color: #C7C7C7;
+    margin: 0 auto;
+}
+
+.login {
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 7px;
+    border-radius: 10px;
+}
+
+.center {
+    margin: 0 auto;
+    width: 50%;
+}
+
+.login2 {
+    width: 50%;
+    float: left;
+    margin: 0 auto;
+    margin-bottom: 7px;
+    border-radius: 10px;
+}
+
+.login3 {
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 7px;
+    border-radius: 10px;
+}
+
+.rad {
+    border-radius: 8px;
+}
+
+.pad {
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
 .wide {
     width:100%;
 }
@@ -21,7 +105,7 @@
     float:right;
 }
 .title {
-    color: #5d72ff
+    color: #5d72ff;
 }
 
 .timeline {
@@ -36,6 +120,11 @@
     padding-left: 10px;
     font-size: 35px;
     color: #5d72ff;
+}
+
+.grey {
+    color: #C7C7C7;
+    padding: 20px;
 }
 img {
     padding-right: 10px;

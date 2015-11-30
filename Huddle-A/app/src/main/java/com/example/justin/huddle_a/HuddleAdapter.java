@@ -5,12 +5,11 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 
 /**
  * Created by Justin on 10/30/2015.
@@ -19,9 +18,8 @@ public class HuddleAdapter extends BaseAdapter {
     Activity context;
     int layoutResourceId;
     private static LayoutInflater inflater = null;
-    Huddle data[];
-
-    public HuddleAdapter(Activity context, int layoutResourceId, Huddle[] data) {
+    ArrayList<Huddle> data;
+    public HuddleAdapter(Activity context, int layoutResourceId, ArrayList<Huddle> data) {
         //super(context, layoutResourceId, data);
         this.context = context;
         this.layoutResourceId = layoutResourceId;
@@ -30,15 +28,20 @@ public class HuddleAdapter extends BaseAdapter {
 
     }
     public int getCount() {
-        return data.length;
+        return data.size();
     }
 
     public Huddle getItem(int position) {
-        return data[position];
+        return data.get(position);
     }
 
     public long getItemId(int position) {
         return position;
+    }
+
+    public void addItem(Huddle stuff) {
+        data.add(0, stuff);
+        notifyDataSetChanged();
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
@@ -47,22 +50,22 @@ public class HuddleAdapter extends BaseAdapter {
             fromthesix = inflater.inflate(R.layout.test, null);
 
         TextView title = (TextView)fromthesix.findViewById(R.id.title); // title
-        TextView artist = (TextView)fromthesix.findViewById(R.id.description); // artist name
+        //TextView artist = (TextView)fromthesix.findViewById(R.id.description); // artist name
         TextView location = (TextView)fromthesix.findViewById(R.id.location); // duration
         TextView time = (TextView)fromthesix.findViewById(R.id.time);
         TextView initials = (TextView)fromthesix.findViewById(R.id.initials);
-        TextView description = (TextView)fromthesix.findViewById(R.id.description);
+       // TextView description = (TextView)fromthesix.findViewById(R.id.description);
         ImageView thumb_image=(ImageView)fromthesix.findViewById(R.id.list_image); // thumb image
 
         Huddle current = getItem(position);
 
         // Setting all values in listview
         title.setText(current.title);
-        artist.setText(current.description);
+        //artist.setText(current.description);
         location.setText(current.location);
         time.setText(current.time);
         initials.setText(current.initials);
-        description.setText(current.description);
+       // description.setText(current.description);
         thumb_image.setImageResource(current.icon);
 
         //thumb_image.getDrawable(song.get(CustomizedListView.KEY_THUMB_URL), thumb_image);

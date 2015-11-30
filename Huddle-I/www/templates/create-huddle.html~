@@ -1,0 +1,48 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view view-title="Create a Huddle">
+  <ion-nav-bar>
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+  </ion-nav-bar>
+  <br class="padding-top">
+  <br>
+  <div class="list">
+    <label class="item item-input">
+      <input type="text" placeholder="Huddle Name">
+    </label>
+    <label class="item item-input">
+      <textarea placeholder="Description"></textarea>
+    </label>
+  </div>
+  <label class="numberOfPeople">Number of People?</label>
+  <br>
+  <div class="button-bar">
+    <a class="button">-</a>
+    <input class="input-mini" type="text" placeholder="numberOfPeople">
+    <a class="button">+</a>
+  </div>
+  <hr>
+
+  <br>
+  <ion-radio ng-repeat="type in huddleTypes"
+                       ng-value="type"
+                       ng-model="huddleType"
+                       ng-change="updateHuddleType(type)"
+                       class="button button-positive button-small button-outline"
+                       name="radio1">
+              {{ type }}
+  </ion-radio>
+  <hr>
+  <label class="location">Location</label>
+  <label class="item item-input">
+    <input type="text" placeholder="Add Location?">
+  </label>
+  <button class="button button-full button-positive">
+  Let's Huddle!
+  </button>
+</ion-view>

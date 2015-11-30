@@ -106,6 +106,7 @@
             android:layout_weight="6"
             android:layout_gravity="bottom"
             android:inputType="textNoSuggestions"
+            android:backgroundTint="#000000"
             android:color="?attr/colorPrimary"
             android:hint="Type your message" >
         </EditText>

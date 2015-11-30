@@ -1,4 +1,3 @@
-<span>hello</span>
 <ion-view>
 <ion-nav-title>
     <div class="bar bar-header">
@@ -11,12 +10,12 @@
 </ion-nav-title>
   <ion-content class="has-header">
     <ion-list>
-      <ion-item class="item-icon-right" ng-repeat="(key, value) in huddles" type="item-text-wrap" href="#/huddle/{{value._id}}">
-        <img ng-src="{{value.ownerSpiritAnimal}}" height="30" style="float:left">
-        <label class="timeline">{{value.ownerInitials}}</label>
-        <h2 class="title">{{value.name}}</h2>
-        <p class="nobreak">{{value.location}}</p>
-          <p class="right" align="right">{{value.lifeTime}}</p>
+      <ion-item class="item-icon-right" ng-repeat="(key, huddle) in huddles" type="item-text-wrap" href="#/huddle/{{huddle._id}}">
+        <img ng-src="{{huddle.ownerSpiritAnimal}}" height="30" style="float:left">
+        <label class="timeline">{{huddle.ownerInitials}}</label>
+        <h2 class="title">{{huddle.name}}</h2>
+        <p class="nobreak">{{huddle.location}}</p>
+          <p class="right" align="right">{{huddle.lifeTime}}</p>
         <i class="icon ion-chevron-right icon-accessory"></i>
       </ion-item>
     </ion-list>
