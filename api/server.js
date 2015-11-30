@@ -8,7 +8,7 @@ var mongoose = require('mongoose');
 var huddleModel = require('./huddleModel.js');
 var userModel = require('./userModel.js');
 mongoose.connect('mongodb://localhost:27017/huddledb');
-var port = 80;
+var port = 8080;
 
 //root app
 var app = express();
