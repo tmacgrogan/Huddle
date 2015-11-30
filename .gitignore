@@ -11,3 +11,4 @@ plugins/
 .DS_Store
 /build
 /captures
+./api/huddle

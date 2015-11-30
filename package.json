@@ -13,7 +13,8 @@
 	"body-parser": "*",
 	"mongodb": "*",
 	"monk": "*",
-	"mongoose": "*"
+	"mongoose": "*",
+	"swaggerize-express": "*"
   },
   "devDependencies": {
     "bower": "^1.3.3",

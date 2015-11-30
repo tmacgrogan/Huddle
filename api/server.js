@@ -8,6 +8,7 @@ var mongoose = require('mongoose');
 var huddleModel = require('./huddleModel.js');
 var userModel = require('./userModel.js');
 mongoose.connect('mongodb://localhost:27017/huddledb');
+var port = 80;
 
 //root app
 var app = express();
@@ -23,10 +24,8 @@ app.use(function(req, res, next) {
 app.locals.title = 'Huddle';
 app.locals.email = 'root@huddle.com';
 
-const PORT=8080
-
 //start server @ http://localhost:[PORT]
-http.createServer(app).listen(PORT);
+http.createServer(app).listen(port);
 
 // GET huddle.com
 app.get('/', function(req, res){
