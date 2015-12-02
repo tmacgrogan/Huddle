@@ -26,8 +26,6 @@
   </div>
   <div class="container">
     <label class="grey numberOfPeople">Number of People?</label>
-    <br>
-    <br>
     <div class="button-bar">
       <div>
         <div class = "my_center">
@@ -54,19 +52,15 @@
                   {{ type }}
       </ion-radio>
     </div>
-    <br>
   </div>
   <div class="container">
     <label class="grey numberOfPeople">Huddle Time: {{expirationTime}}</label>
-    <br><br>
     <div class="item range range-positive">
       <span>{{hours}}</span>
       <input type="range" name="hours" ng-change="updateExpirationTime()" min="1" max="24" ng-model="hours" ng-init="hours = 12">
       <span>24 hours</span>
     </div>
-      <br>
   </div>
-  <br><br>
   <div class = "letshuddle">
     <button ng-click="createHuddle()" class="button button-full button-positive create">Create Huddle!</button>
   </div>  
