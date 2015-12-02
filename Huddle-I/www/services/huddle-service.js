@@ -8,13 +8,13 @@ huddle.service('HuddleService', ['$http', function($http) {
             body: json
         }
 
-        $http.get('http://localhost:8080/huddles').success(function(data, status) {
+        $http.get('http://gthuddle.cloudapp.net/huddles').success(function(data, status) {
             callback(null, status, data);
         });
     };
 
     this.getHuddleByID = function(id, callback) {
-        var url = "http://localhost:8080/huddles/" + id; 
+        var url = "http://gthuddle.cloudapp.net/huddles/" + id; 
         $http.get(url).success(function(data, status) {
             callback(null, status, data);
         });
@@ -23,7 +23,7 @@ huddle.service('HuddleService', ['$http', function($http) {
     this.createHuddle = function(json, callback) {
         var req = {
             method: "POST",
-            url: "http://localhost:8080/create",
+            url: "http://gthuddle.cloudapp.net/create",
             data: json
         }
 

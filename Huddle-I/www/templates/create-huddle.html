@@ -13,47 +13,61 @@
   <br>
   <div class="list">
     <label class="item item-input">
-      <input type="text" placeholder="Huddle Name">
+      <input class="input" ng-model="name" type="text" placeholder="Huddle Name">
     </label>
     <label class="item item-input">
       <div class="desc">
-        <textarea class = "desc" placeholder="Description"></textarea>
+        <textarea class="input" ng-model="description" placeholder="Description"></textarea>
       </div>
     </label>
+    <label class="item item-input">
+      <input class="input" ng-model="location" type="text" placeholder="Location?">
+    </label>
   </div>
-  <label class="grey numberOfPeople">Number of People?</label>
-  <br>
-  <div class="button-bar">
-    <div>
-      <div class = "my_center">
-        <a class="button my_button">-</a>
-      </div>
-      <div class = "my_center">
-        <input class="input-mini num-of-people" type="text" placeholder="0">
-      </div>
-      <div class = "my_center">
-        <a class="button my_button">+</a>
+  <div class="container">
+    <label class="grey numberOfPeople">Number of People?</label>
+    <br>
+    <br>
+    <div class="button-bar">
+      <div>
+        <div class = "my_center">
+          <a ng-click="decrementPeople()" class="button button-positive button-small button-outline my-button">-</a>
+        </div>
+        <div class = "my_center">
+            <input ng-model="numberOfPeople" ng-init="numberOfPeople=1" min="1" class="input-mini num-of-people" type="number" ng-bind="numberOfPeople">
+        </div>
+        <div class = "my_center">
+          <a ng-click="numberOfPeople = numberOfPeople + 1" class="button button-positive button-small button-outline my_button">+</a>
+        </div>
       </div>
     </div>
   </div>
-  <hr>
-  <br>
-  <ion-radio ng-repeat="type in huddleTypes"
-                       ng-value="type"
-                       ng-model="huddleType"
-                       ng-change="updateHuddleType(type)"
-                       class="button button-positive button-small button-outline"
-                       name="radio1">
-              {{ type }}
-  </ion-radio>
-  <hr>
-  <div class="location">
-    <label>Location</label>
+  <div class="container">
+    <label class="grey huddleTypes">Huddle Type?</label>
+    <div class="button-group">
+      <ion-radio ng-repeat="type in huddleTypes"
+                           ng-value="type"
+                           ng-model="huddleType"
+                           ng-change="updateHuddleType($index)"
+                           class="button button-positive button-small button-outline"
+                           name="radio1">
+                  {{ type }}
+      </ion-radio>
+    </div>
+    <br>
   </div>
-  <label class="item item-input">
-    <input type="text" placeholder="Add Location?">
-  </label>
+  <div class="container">
+    <label class="grey numberOfPeople">Huddle Time: {{expirationTime}}</label>
+    <br><br>
+    <div class="item range range-positive">
+      <span>{{hours}}</span>
+      <input type="range" name="hours" ng-change="updateExpirationTime()" min="1" max="24" ng-model="hours" ng-init="hours = 12">
+      <span>24 hours</span>
+    </div>
+      <br>
+  </div>
+  <br><br>
   <div class = "letshuddle">
-    <button class="button button-full button-positive rad">Let's Huddle!</button>
+    <button ng-click="createHuddle()" class="button button-full button-positive create">Create Huddle!</button>
   </div>  
 </ion-view>

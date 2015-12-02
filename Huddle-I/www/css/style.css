@@ -23,9 +23,10 @@
     padding-left: 10px;
 }
 
-.num-of-people {
+input[type="number"] {
     text-align: center;
-    width: 80px;
+    width: 50px;
+    font-size:20px;
 }
 
 .next-to {
@@ -42,10 +43,45 @@
     margin: 0 auto;
 }
 
+.button-group {
+    width: 450px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+
 .my_button {
     border-radius: 5px;
     width: 30px;
     margin: 0 auto;
+}
+.view-title {
+    font-size:20px;
+}
+input { 
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+}
+.input, input[type="text"], .grey  {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+  font-size:20px;
+  color: #387ef5;
+  height:70px;
+}
+.item-radio .item-content {
+    width: 180px;
+    font-size: 20px;
+    text-align: center;
+    padding: 8px;
+}
+
+.button.button-positive.button-outline {
+    border-color: #387ef5;
+    background: transparent;
+    color: #387ef5;
+    margin-bottom: 15px;
+    margin-right: 10px;
 }
 
 .buffer {
@@ -89,8 +125,10 @@
     border-radius: 10px;
 }
 
-.rad {
+.create {
     border-radius: 8px;
+    color: #5d72ff;
+
 }
 
 .pad {
@@ -123,11 +161,26 @@
 }
 
 .grey {
-    color: #C7C7C7;
-    padding: 20px;
+    padding: 17px;
 }
+
+textarea {
+    height:100px;
+}
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+   color: #387ef5;
+}
+
 img {
     padding-right: 10px;
 }
 
+.container {
+    border-bottom: 1px solid #C7C7C7;
+    margin-top: 10px;
+}
 
+.range {
+    border:none;
+}
