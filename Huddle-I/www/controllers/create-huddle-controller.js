@@ -23,20 +23,16 @@ function CreateHuddleCtrl(HuddleService,
   //});
   $scope.numberOfPeople = 0;
   $scope.huddleTypes = ["Academic", "Social"];
+  var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+  var months =["Jan", "Feb", "March", "April", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
   $scope.updateHuddleType = function(index) {
-    $scope.huddleType = $scope.huddleTypes[index];
+    $scope.huddleType = index;
   }
 
   $scope.updateExpirationTime = function() {
-    var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-    var months =["Jan", "Feb", "March", "April", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"]
     var date = getExpirationDate($scope.hours);
-    $scope.expirationTime = days[date.getDay()] + ", "
-                            + months[date.getMonth()] +" "
-                            + date.getDate() + ", " 
-                            + date.getHours() + ":" 
-                            + date.getMinutes();
+    $scope.expirationTime = date;
   }
 
   $scope.decrementPeople = function() {
@@ -48,7 +44,12 @@ function CreateHuddleCtrl(HuddleService,
   var getExpirationDate = function(h) {    
     var today = new Date();
     today.setTime(today.getTime() + (h*60*60*1000));
-    return today;
+    var expirationTime = days[today.getDay()] + ", "
+                            + months[today.getMonth()] +" "
+                            + today.getDate() + ", " 
+                            + today.getHours() + ":" 
+                            + today.getMinutes();
+    return expirationTime;
   }
 
   $scope.createHuddle = function() {
@@ -61,16 +62,16 @@ function CreateHuddleCtrl(HuddleService,
     newHuddle.lifeTime = getExpirationDate(parseInt($scope.hours));
     if (newHuddle.numberOfPeople <= 1) {
       if (newHuddle.huddleType == "Academic") {
-        newHuddle.ownerSpiritAnimal = "./img/academicPair.png";
+        newHuddle.spiritAnimal = "./img/academicPair.png";
       } else {
-        newHuddle.ownerSpiritAnimal = "./img/socialPair.png";
+        newHuddle.spiritAnimal = "./img/socialPair.png";
       }
     }
     else {
       if (newHuddle.huddleType == "Academic") {
-        newHuddle.ownerSpiritAnimal = "./img/academicGroup.png";
+        newHuddle.spiritAnimal = "./img/academicGroup.png";
       } else {
-        newHuddle.ownerSpiritAnimal = "./img/sociaGroup.png";
+        newHuddle.spiritAnimal = "./img/socialGroup.png";
       }
     }
 

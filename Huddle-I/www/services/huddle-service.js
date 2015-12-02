@@ -4,7 +4,7 @@ huddle.service('HuddleService', ['$http', function($http) {
     this.getHuddles = function(json, callback) {
         var req = {
             method: "GET",
-            url: "http://localhost:8080/huddles",
+            url: "http://gthuddle.cloudapp.net/huddles",
             body: json
         }
 
