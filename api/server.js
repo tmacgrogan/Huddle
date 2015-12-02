@@ -51,7 +51,7 @@ create.post('/', function(req, res){
 	huddle.ownerId = req.body.ownerId ? req.body.ownerId : 1;  //override with authentication
 	huddle.pairOrGroup = req.body.numberOfPeople == 1 ? 0 : 1;
 
-	console.log("PAIR OR GROUP: " + pairOrGroup);
+	console.log("PAIR OR GROUP: " + huddle.pairOrGroup);
 
 	huddle.save(function(err){
 		if(err){
