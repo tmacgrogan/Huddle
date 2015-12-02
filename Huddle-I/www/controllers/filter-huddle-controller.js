@@ -1,17 +1,15 @@
 angular
   .module('FilterHuddleCtrl', [])
   .controller('FilterHuddleCtrl', [
+    'HuddleService',
     '$scope',
-    '$state',
-    '$stateParams',
     FilterHuddleCtrl
   ]);
 
-function FilterHuddleCtrl($scope,
+function FilterHuddleCtrl(HuddleService,
+                           $scope,
                            $rootScope,
-                           $timeout,
-                           $state,
-                           $stateParams) {
+                           $timeout) {
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
   // To listen for when this page is active (for example, to refresh data),
@@ -21,6 +19,7 @@ function FilterHuddleCtrl($scope,
   //});
   $scope.huddleTypes = ["Academic", "Social"];
   $scope.options = ["Pair", "Group"];
+
   var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
   var months =["Jan", "Feb", "March", "April", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
@@ -55,12 +54,18 @@ function FilterHuddleCtrl($scope,
   }
 
   $scope.filterHuddles = function() {
-    var filter = {}
-    filter.pairOrGroup = $scope.pairOrGroup;
-    filter.huddleType = $scope.huddleType;
-    console.log(filter);
-
-    HuddleService.filterHuddles(filter, function(err, status, data) {
+    var query = "";
+    console.log($scope.pairOrGroup);
+    if ($scope.pairOrGroup != undefined && $scope.huddleType != undefined) {
+      query = query + "pairOrGroup=" + $scope.pairOrGroup + "&huddleType=" + $scope.huddleType;
+    }
+    else if ($scope.pairOrGroup != undefined) {
+      query = query + "pairOrGroup=" + $scope.pairOrGroup;
+    }
+    else if(typeof($scope.huddleType) != undefined)  {
+      query = query + "huddleType=" + $scope.huddleType;
+    }
+    HuddleService.filterHuddles(query, function(err, status, data) {
       if (!err) { 
         console.log(data);
       }

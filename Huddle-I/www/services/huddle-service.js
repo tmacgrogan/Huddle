@@ -13,12 +13,10 @@ huddle.service('HuddleService', ['$http', function($http) {
         });
     };
 
-    this.filterHuddles = function(json, callback) {
-        $http({
-            url: "GET",
-            method: "http://gthuddle.cloudapp.net/huddles?",
-            params: json
-         }).success(function(data, status) {
+    this.filterHuddles = function(url, callback) {
+        var url = "http://gthuddle.cloudapp.net/huddles?" + url; 
+        console.log(url);
+        $http.get(url).success(function(data, status) {
             callback(null, status, data);
         });
     };
