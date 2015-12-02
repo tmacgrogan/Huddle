@@ -73,7 +73,6 @@ function CreateHuddleCtrl(HuddleService,
         newHuddle.spiritAnimal = "./img/socialGroup.png";
       }
     }
-
     HuddleService.createHuddle(newHuddle, function(err, status, data) {
       if (!err) { 
         console.log(data);
