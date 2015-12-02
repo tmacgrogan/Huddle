@@ -63,7 +63,7 @@ angular.module('starter', [
       }
     }
   })
-  .state('home.filter-huddle', {
+  .state('home.filterHuddle', {
     url: '/filter-huddle',
     views: {
       'tab-huddles': {

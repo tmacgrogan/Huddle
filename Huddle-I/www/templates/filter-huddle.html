@@ -4,68 +4,42 @@
   The FriendsCtrl pulls data from the Friends service (service.js)
   The Friends service returns an array of friend data
 -->
-<ion-view view-title="Filter a Huddle">
+<ion-view view-title="Filter Huddle">
   <ion-nav-bar>
     <ion-nav-back-button>
     </ion-nav-back-button>
   </ion-nav-bar>
   <br class="padding-top">
   <br>
-
-  <div class="list">
-    <label class="item item-input">
-      <input type="text" placeholder="Huddle Name">
-    </label>
-    <label class="item item-input">
-      <div class="desc">
-        <textarea class = "desc" placeholder="Description"></textarea>
-      </div>
-    </label>
-  </div>
-  <div class="list">
-    <label class="item item-input">
-      <input type="text" placeholder="Huddle Name">
-    </label>
-    <label class="item item-input">
-      <div class="desc">
-        <textarea class = "desc" placeholder="Description"></textarea>
-      </div>
-    </label>
-  </div>
-
-  <label class="grey numberOfPeople">Number of People?</label>
-  <br>
-  <div class="button-bar">
-    <div>
-      <div class = "my_center">
-        <a class="button my_button">-</a>
-      </div>
-      <div class = "my_center">
-        <input class="input-mini num-of-people" type="text" placeholder="0">
-      </div>
-      <div class = "my_center">
-        <a class="button my_button">+</a>
-      </div>
+  <div class="container">
+    <label class="grey huddleTypes">Pair or Group?</label>
+    <div class="button-group">
+      <ion-radio ng-repeat="option in options"
+                           ng-value="option"
+                           ng-model="pairOrGroup"
+                           ng-change="updateOption($index)"
+                           class="button button-positive button-small button-outline"
+                           name="radio2">
+                  {{ option }}
+      </ion-radio>
     </div>
+    <br>
   </div>
-  <hr>
-  <br>
-  <ion-radio ng-repeat="type in huddleTypes"
-                       ng-value="type"
-                       ng-model="huddleType"
-                       ng-change="updateHuddleType(type)"
-                       class="button button-positive button-small button-outline"
-                       name="radio1">
-              {{ type }}
-  </ion-radio>
-  <hr>
-  <div class="location">
-    <label>Location</label>
-  </div>
-  <label class="item item-input">
-    <input type="text" placeholder="Add Location?">
-  </label>
+  <div class="container">
+    <label class="grey huddleTypes">Huddle Type?</label>
+    <div class="button-group">
+      <ion-radio ng-repeat="type in huddleTypes"
+                           ng-value="type"
+                           ng-model="huddleType"
+                           ng-change="updateHuddleType($index)"
+                           class="button button-positive button-small button-outline"
+                           name="radio1">
+                  {{ type }}
+      </ion-radio>
+    </div>
+    <br>
+  </div>  <br><br>
   <div class = "letshuddle">
-    <button class="button button-full button-positive rad">Let's Huddle!</button>
+    <button ng-click="filterHuddles()" class="button button-full button-positive create">Filter Huddles</button>
   </div>  
 </ion-view>

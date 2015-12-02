@@ -21,7 +21,6 @@ function CreateHuddleCtrl(HuddleService,
   //
   //$scope.$on('$ionicView.enter', function(e) {
   //});
-  $scope.numberOfPeople = 0;
   $scope.huddleTypes = ["Academic", "Social"];
   var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
   var months =["Jan", "Feb", "March", "April", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
