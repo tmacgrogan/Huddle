@@ -39,7 +39,6 @@ create.post('/', function(req, res){
 	/////////
 	//validate newHuddle
 	/////////
-	console.log(req);
 	var huddle = new huddleModel();
 	huddle.name = req.body.name;
 	huddle.location = req.body.location;
@@ -50,14 +49,15 @@ create.post('/', function(req, res){
 	huddle.ownerInitials = req.body.initials; //TODO: GET THIS FROM USER API METHOD
 	huddle.ownerSpiritAnimal = req.body.spiritAnimal; //TODO: GET THIS FROM USER API METHOD
 	huddle.ownerId = req.body.ownerId ? req.body.ownerId : 1;  //override with authentication
-	
+	huddle.pairOrGroup = req.body.numberOfPeople == 1 ? 0 : 1;
+
+	console.log("PAIR OR GROUP: " + pairOrGroup);
+
 	huddle.save(function(err){
 		if(err){
-			console.log(err);
 			next();
 		}
 	});
-	console.log(huddle);
 	res.send(huddle);
 });
 
@@ -100,6 +100,11 @@ huddles.get('/', function(req, res){
 	if(req.query.numberOfPeople){
 		filter.numberOfPeople = req.query.numberOfPeople;
 	}
+
+	if (req.query.pairOrGroup) {
+		filter.pairOrGroup = req.query.pairOrGroup;
+	}
+
 	huddleModel.find(filter, function(err, huds){
 		req.huddles = huds;
 		console.log("found: " + huds);

@@ -12,7 +12,8 @@ var huddleSchema = new Schema({
 	numberOfPeople: Number,
 	huddleType: Number, // (0=academic, 1=social)
     ownerInitials: String,
-    ownerSpiritAnimal: String
+    ownerSpiritAnimal: String,
+    pairOrGroup: Number
 }, {
     collection: 'huddles'
 });
